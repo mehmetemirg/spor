@@ -2,30 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Mobil cihazlarda doru ˆlÁekleme iÁin -->
+    <!-- Mobil cihazlarda do√∞ru √∂l√ßekleme i√ßin -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Workout Tracker</title>
 
-    <!-- PWA MAN›FEST BA–LANTISI -->
+    <!-- PWA MAN√ùFEST BA√êLANTISI -->
     <link rel="manifest" href="manifest.json">
 
-    <!-- iOS ÷ZEL META ET›KETLER› -->
-    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Safari UI'˝ gizler, tam ekran yapar -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- ‹st saat/˛arj Áubuunu ˛effaf siyah yapar -->
+    <!-- iOS √ñZEL META ET√ùKETLER√ù -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- Safari UI'√Ω gizler, tam ekran yapar -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> <!-- √úst saat/√æarj √ßubu√∞unu √æeffaf siyah yapar -->
     <meta name="apple-mobile-web-app-title" content="Tracker Pro"> <!-- Ana ekrandaki isim -->
     
-    <!-- iOS ANA EKRAN ›KONU (Ayn˝ klasˆrde icon.png ad˝nda bir gˆrselin olmal˝) -->
+    <!-- iOS ANA EKRAN √ùKONU (Ayn√Ω klas√∂rde icon.png ad√Ωnda bir g√∂rselin olmal√Ω) -->
     <link rel="apple-touch-icon" href="icon.png">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* CSS kodlar˝n burada durmaya devam edecek... */
+        /* CSS kodlar√Ωn burada durmaya devam edecek... */
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* iOS MODERN TEMA DE–›ﬁKENLER› */
+        /* iOS MODERN TEMA DE√ê√ù√ûKENLER√ù */
         :root {
             --bg-color: #000000; /* iOS True Black */
             --surface-color: #1c1c1e; /* iOS Dark Surface */
@@ -35,7 +35,7 @@
             --danger-color: #ff453a; /* iOS Red */
             --border-color: #38383a;
             
-            /* Yuvarlak Hatlar iÁin Dei˛kenler */
+            /* Yuvarlak Hatlar i√ßin De√∞i√ækenler */
             --radius-lg: 24px;
             --radius-md: 16px;
             --radius-sm: 10px;
@@ -43,7 +43,7 @@
         }
 
         body {
-            /* Apple Sistem Fontlar˝ */
+            /* Apple Sistem Fontlar√Ω */
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color); color: var(--text-color);
             margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center;
@@ -57,7 +57,7 @@
         
         .navbar h2 { margin: 0; font-size: 22px; font-weight: 600; }
 
-        /* KAPS‹L BUTONLAR */
+        /* KAPS√úL BUTONLAR */
         .btn { 
             background-color: var(--primary-color); color: #fff; border: none; 
             padding: 10px 20px; border-radius: var(--radius-pill); cursor: pointer; 
@@ -82,7 +82,7 @@
         .home-planner ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
         .home-planner li { background: #2c2c2c; padding: 8px 14px; border-radius: var(--radius-pill); font-size: 13px; color: #eee; font-weight: 500;}
 
-        /* TAKV›M */
+        /* TAKV√ùM */
         .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
         .day-name { text-align: center; font-weight: 600; padding: 10px 0; color: #8e8e93; font-size: 14px; }
@@ -127,7 +127,7 @@
         .program-card { background: #2c2c2e; padding: 20px; border-radius: var(--radius-lg); margin-bottom: 15px; border-left: 5px solid var(--primary-color); }
         .next-program-badge { background-color: rgba(50, 215, 75, 0.15); border: 1px solid var(--secondary-color); color: var(--secondary-color); padding: 12px 15px; border-radius: var(--radius-md); margin-bottom: 20px; font-size: 14px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
 
-        /* ›STAT›ST›K PANEL› CSS */
+        /* √ùSTAT√ùST√ùK PANEL√ù CSS */
         .stats-panel { background: #2c2c2e; padding: 20px; border-radius: var(--radius-lg); font-size: 15px; margin-bottom: 25px; }
         .stats-panel h4 { margin-top: 0; margin-bottom: 15px; color: var(--primary-color); font-size: 18px; border-bottom: 1px solid #38383a; padding-bottom: 10px; }
         .stats-row { display: flex; justify-content: space-between; margin-bottom: 10px; }
@@ -330,7 +330,7 @@
                 let dayDiv = document.createElement('div');
                 dayDiv.className = 'calendar-day';
                 
-                // G¸n¸ h¸crenin kˆ˛esine yazal˝m (daha modern gˆr¸n¸m)
+                // G√ºn√º h√ºcrenin k√∂√æesine yazal√Ωm (daha modern g√∂r√ºn√ºm)
                 dayDiv.innerHTML = `<span style="position:absolute; top:8px; left:10px; opacity:0.8;">${i}</span>`;
                 
                 if(db.workouts[dateStr] && db.workouts[dateStr].length > 0) {
@@ -340,7 +340,7 @@
 
                     if(muscles.length === 1) {
                         dayDiv.style.backgroundColor = muscleColors[muscles[0]];
-                        dayDiv.style.color = '#fff'; // Kontrast iÁin beyaz yaz˝
+                        dayDiv.style.color = '#fff'; // Kontrast i√ßin beyaz yaz√Ω
                     } else {
                         let parts = []; let p = 100 / muscles.length; let cp = 0;
                         muscles.forEach(m => { 
@@ -361,7 +361,7 @@
 
         function changeMonth(dir) { currentDate.setMonth(currentDate.getMonth() + dir); renderCalendar(); }
 
-        /* --- MANTIKSAL HATA D‹ZELTMES› (G‹N BAZLI SAYIM) --- */
+        /* --- MANTIKSAL HATA D√úZELTMES√ù (G√úN BAZLI SAYIM) --- */
         function updateStatsAndBodyMap() {
             let frequency = { "chest":0, "back":0, "legs":0, "shoulders":0, "core":0, "biceps":0, "triceps":0 };
             let cardioMins = 0; let cardioKcal = 0; let attendanceCount = 0;
@@ -374,7 +374,7 @@
                 if(db.workouts[dateStr] && db.workouts[dateStr].length > 0) {
                     attendanceCount++; 
                     
-                    // O g¸n Áal˝˛˝lan e˛siz kaslar˝ bir Set iÁinde topluyoruz
+                    // O g√ºn √ßal√Ω√æ√Ωlan e√æsiz kaslar√Ω bir Set i√ßinde topluyoruz
                     let dailyMuscles = new Set();
                     
                     db.workouts[dateStr].forEach(ex => {
@@ -386,7 +386,7 @@
                         }
                     });
                     
-                    // Toplanan benzersiz kaslar˝n frekans˝n˝ sadece 1 kez art˝r˝yoruz
+                    // Toplanan benzersiz kaslar√Ωn frekans√Ωn√Ω sadece 1 kez art√Ωr√Ωyoruz
                     dailyMuscles.forEach(m => {
                         if(frequency[m] !== undefined) frequency[m]++;
                     });
